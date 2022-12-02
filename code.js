@@ -1,28 +1,29 @@
 function sumZero(arr){
     for(let i = 0; i < arr.length; i++){
-        for(let j = i+1; j < arr.length; i++){
-            if((arr[i] + arr[j]) === 0){
-                return true
-            }else{
-                return false
+        for(let j = 0; j < arr.length; i++){
+            if(i !== j){
+                if(nums[i] + nums[j] === 0){
+                    return true
+                } else{
+                    return false
+                }
             }
         }
     }
 }
-//o(n)
+//o(n2)
 
 function hasUniqueChars(str){
     for(let i = 0; i < str.length; i++){
         for(let j = i + 1; j < str.length; j++){
             if(str[i] === str[j]){
                 return false
-            }else{
-                return true
             }
         }
     }
+    return true
 }
-//o(n)
+//o(n2)
 
 function isPangram(string){
     let strArr = string.toLowerCase();
@@ -35,17 +36,17 @@ function isPangram(string){
     }
     return true;
   }
-//o(1)
+//o(n)
 
 function findLongestWord(arr){
-	let longest = arr[0]
-	for (let i = 0; i < arr.length; i++) {
-		if(arr[i].length > longest.length){
-			longest = input[i];
-		}
-	}
-	return longest.length;
-} 
+    let biggest = 0
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i].length > biggest){
+            biggest = arr[i].length
+        }
+    }
+    return biggest
+}
 //o(n)
 
 
@@ -55,4 +56,4 @@ function findLongestWord(arr){
 // console.log(hasUniqueChars("Moonday"))
 // console.log(isPangram("The quick brown fox jumps over the lazy dog"))
 // console.log(isPangram("I like cats, but not mice"))
-// console.log(findLongestWord(["hi", "hello"]))
+console.log(findLongestWord(["hi", "hello"]))
